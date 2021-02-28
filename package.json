@@ -1,0 +1,57 @@
+{
+  "name": "uber-apollo-server",
+  "version": "1.0.0",
+  "description": "Apollo server for uber app",
+  "main": "index.ts",
+  "scripts": {
+    "dev":"nodemon --exec ts-node src/index.ts",
+    "start": "nodemon src/index.ts --exec \"node -r dotenv/config\"",
+    "test": "NODE_ENV=mocha mocha -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "vudang <danglegiavu@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.21.0",
+    "apollo-server-express": "^2.21.0",
+    "bcrypt": "^5.0.1",
+    "deepmerge": "^4.2.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.18",
+    "throng": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "github:types/express",
+    "@types/graphql": "^14.5.0",
+    "@types/mongoose": "^5.10.3",
+    "@types/node": "^14.14.31",
+    "eslint": "^7.21.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "expect": "^26.6.2",
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  }
+}
