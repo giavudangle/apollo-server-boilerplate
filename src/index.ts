@@ -1,7 +1,9 @@
 const throng = require('throng')
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 const url = require('url')
-const app = require('./app')
+
+import app from './app'
+
 const config = require('./config')
 const mongoHost = new url.URL(config.MONGODB_URI).host
 const startServer = async function () {

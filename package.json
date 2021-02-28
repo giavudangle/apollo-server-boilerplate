@@ -4,7 +4,7 @@
   "description": "Apollo server for uber app",
   "main": "index.ts",
   "scripts": {
-    "dev":"nodemon --exec ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
     "start": "nodemon src/index.ts --exec \"node -r dotenv/config\"",
     "test": "NODE_ENV=mocha mocha -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
   },
@@ -37,8 +37,10 @@
   "devDependencies": {
     "@types/express": "github:types/express",
     "@types/graphql": "^14.5.0",
+    "@types/mocha": "^8.2.1",
     "@types/mongoose": "^5.10.3",
     "@types/node": "^14.14.31",
+    "@types/supertest": "^2.0.10",
     "eslint": "^7.21.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
